@@ -5,8 +5,8 @@ const initialState = {
     { id: 1, text: "Flower", amount: -20 },
     { id: 2, text: "Salary", amount: 300 },
     { id: 3, text: "Book", amount: -10 },
-    { id: 4, text: "Camera", amount: 150 }
-  ]
+    { id: 4, text: "Camera", amount: 150 },
+  ],
 };
 
 // Creating Global Context
@@ -16,14 +16,15 @@ const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   const addTransaction = (payload) => {
-    dispatch({ type: "EXPEN", payload: payload });
+    console.log(payload);
+    dispatch({ type: "EXPEN", payload });
   };
 
   return (
     <GlobalContext.Provider
       value={{
         transactions: state.transactions,
-        addTransaction
+        addTransaction,
       }}
     >
       {children}

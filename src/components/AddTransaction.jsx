@@ -34,8 +34,9 @@ const AddTransaction = () => {
         <div
           className="btn"
           onClick={(e) => {
-            // e.preventDefault();
             addTransaction({ text, amount });
+            setAmount(0);
+            setText("");
           }}
         >
           Add transaction
