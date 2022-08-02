@@ -8,6 +8,13 @@ export default (state, action) => {
 
       return { ...state };
     }
+    case "DELETE": {
+      const trans = state.transactions;
+      const transNew = trans.filter((t) => t.id != action.payload.id);
+      state.transactions = transNew;
+
+      return { ...state };
+    }
     default:
       return state;
   }
