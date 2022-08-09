@@ -53,9 +53,9 @@ h4 {
   border-radius: 20px;
   color: black;
   padding: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-between;
-
   margin: 20px 0;
 }
 

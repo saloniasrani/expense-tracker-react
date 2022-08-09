@@ -48,7 +48,7 @@ const AddTransaction = () => {
           className="btn"
           onClick={(e) => {
             addTransaction({ text, amount, currency });
-            setAmount(0);
+            setAmount(0.0);
             setText("");
           }}
         >
