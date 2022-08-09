@@ -160,3 +160,11 @@ input[type="number"] {
 li:hover .delete-btn {
   opacity: 1;
 }
+
+.currency {
+  display: flex;
+}
+select {
+  width: 50px;
+  border: none;
+}

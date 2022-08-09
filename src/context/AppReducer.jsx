@@ -10,7 +10,7 @@ export default (state, action) => {
     }
     case "DELETE": {
       const trans = state.transactions;
-      const transNew = trans.filter((t) => t.id != action.payload.id);
+      const transNew = trans.filter((t) => t.id !== action.payload.id);
       state.transactions = transNew;
 
       return { ...state };

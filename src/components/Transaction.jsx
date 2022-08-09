@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-
-const Transaction = ({ transaction }) => {
+const currencyMapping = { euro: "€", dollar: "$", rupee: "₹" };
+const Transaction = (props) => {
+  const { transaction } = props;
   const sign = transaction?.amount < 0;
   const classes = sign ? "minus" : "plus";
   const { deleteTransaction } = useContext(GlobalContext);

@@ -4,14 +4,15 @@ import { GlobalContext } from "../context/GlobalState";
 const AddTransaction = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
+  const [currency, setCurrency] = useState("dollar");
   const { addTransaction } = useContext(GlobalContext);
 
   return (
     <>
       <h3>Add new transaction</h3>
       <form>
-        <div className="form-control">
-          <label htmlFor="text">Description</label>
+        <div>
+          <label>Description</label>
           <input
             type="text"
             value={text}
@@ -19,22 +20,33 @@ const AddTransaction = () => {
             placeholder="Enter text..."
           />
         </div>
-        <div className="form-control">
-          <label htmlFor="amount">
+        <div>
+          <label>
             Amount <br />
             (negative - expense, positive - income)
           </label>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter amount"
-          />
+          <div className="currency">
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              placeholder="Enter amount"
+            />
+            <select
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+            >
+              <option value="dollar">$</option>
+              <option value="euro">&euro;</option>
+              <option value="rupee">&#8377;</option>
+            </select>
+          </div>
         </div>
+
         <div
           className="btn"
           onClick={(e) => {
-            addTransaction({ text, amount });
+            addTransaction({ text, amount, currency });
             setAmount(0);
             setText("");
           }}
