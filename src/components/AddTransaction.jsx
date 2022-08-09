@@ -30,6 +30,7 @@ const AddTransaction = () => {
               type="number"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
+              onBlur={(e) => setAmount(Number(e.target.value).toFixed(2))}
               placeholder="Enter amount"
             />
             <select

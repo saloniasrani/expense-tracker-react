@@ -9,7 +9,10 @@ const Transaction = (props) => {
   return (
     <li className={classes + " listing"}>
       {transaction?.text}
-      <span>&euro; {transaction?.amount}</span>
+      <span>
+        {currencyMapping[transaction?.currency]}
+        {transaction?.amount}
+      </span>
       <button
         className="delete-btn"
         onClick={(e) => {
