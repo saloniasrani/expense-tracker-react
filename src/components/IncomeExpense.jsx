@@ -17,6 +17,7 @@ const IncomeExpense = () => {
 
     return acc;
   }, {});
+
   return (
     <div className="inc-exp-container">
       <h4>Income</h4>
